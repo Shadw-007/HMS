@@ -59,7 +59,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM admin WHERE (user
 						<h1 class="text-center text-bold text-dark mt-2x">NU Hostel Management System</h1>
 						<div class="well row pt-2x pb-3x bk-dark">
 							<div class="col-md-8 col-md-offset-2">
-							
+								<h2 class="text-center textbold text-light">Admin Login</h2>
 								<form action="" class="mt" method="post">
 									<label for="" class="text-uppercase text-sm text-light">Your Username or Email</label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb">
