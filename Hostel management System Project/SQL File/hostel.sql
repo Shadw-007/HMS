@@ -99,7 +99,7 @@ CREATE TABLE `registration` (
   `stayfrom` date DEFAULT NULL,
   `duration` int(11) DEFAULT NULL,
   `course` varchar(500) DEFAULT NULL,
-  `regno` int(11) DEFAULT NULL,
+  `schoolId` int(11) DEFAULT NULL,
   `firstName` varchar(500) DEFAULT NULL,
   `middleName` varchar(500) DEFAULT NULL,
   `lastName` varchar(500) DEFAULT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `registration` (
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`id`, `roomno`, `seater`, `feespm`, `foodstatus`, `stayfrom`, `duration`, `course`, `regno`, `firstName`, `middleName`, `lastName`, `gender`, `contactno`, `emailid`, `egycontactno`, `guardianName`, `guardianRelation`, `guardianContactno`, `corresAddress`, `corresCIty`, `corresProvince`, `corresPincode`, `pmntAddress`, `pmntCity`, `pmnatetProvince`, `pmntPincode`, `postingDate`, `updationDate`) VALUES
+INSERT INTO `registration` (`id`, `roomno`, `seater`, `feespm`, `foodstatus`, `stayfrom`, `duration`, `course`, `schoolId`, `firstName`, `middleName`, `lastName`, `gender`, `contactno`, `emailid`, `egycontactno`, `guardianName`, `guardianRelation`, `guardianContactno`, `corresAddress`, `corresCIty`, `corresProvince`, `corresPincode`, `pmntAddress`, `pmntCity`, `pmnatetProvince`, `pmntPincode`, `postingDate`, `updationDate`) VALUES
 (2, 100, 5, 8000, 1, '2020-08-01', 6, 'Bachelor  of Technology', 10806121, 'Anuj', '', 'kumar', 'male', 1234567890, 'ak@gmail.com', 1236547890, 'ABC', 'XYZ', 98756320000, 'ABC 12345 XYZ Street', 'New Delhi', 'Delhi (NCT)', 110001, 'ABC 12345 XYZ Street', 'New Delhi', 'Delhi (NCT)', 110001, '2020-07-20 14:58:26', NULL);
 
 -- --------------------------------------------------------
@@ -213,7 +213,7 @@ INSERT INTO `userlog` (`id`, `userId`, `userEmail`, `userIp`, `city`, `country`,
 
 CREATE TABLE `userregistration` (
   `id` int(11) NOT NULL,
-  `regNo` varchar(255) DEFAULT NULL,
+  `schoolId` varchar(255) DEFAULT NULL,
   `firstName` varchar(255) DEFAULT NULL,
   `middleName` varchar(255) DEFAULT NULL,
   `lastName` varchar(255) DEFAULT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE `userregistration` (
 -- Dumping data for table `userregistration`
 --
 
-INSERT INTO `userregistration` (`id`, `regNo`, `firstName`, `middleName`, `lastName`, `gender`, `contactNo`, `email`, `password`, `regDate`, `updationDate`, `passUdateDate`) VALUES
+INSERT INTO `userregistration` (`id`, `schoolId`, `firstName`, `middleName`, `lastName`, `gender`, `contactNo`, `email`, `password`, `regDate`, `updationDate`, `passUdateDate`) VALUES
 (3, '10806121', 'Kennedy', '', 'Mustafa', 'male', 1234567890, 'test@gmail.com', 'Test@123', '2020-07-20 14:56:18', NULL, NULL);
 
 --

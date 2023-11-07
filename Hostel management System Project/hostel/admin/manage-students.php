@@ -7,7 +7,7 @@ check_login();
 if(isset($_GET['del']))
 {
 	$id=intval($_GET['del']);
-	$adn="delete from registration where regNo=?";
+	$adn="delete from registration where schoolId=?";
 		$stmt= $mysqli->prepare($adn);
 		$stmt->bind_param('i',$id);
         $stmt->execute();
@@ -101,14 +101,14 @@ while($row=$res->fetch_object())
 	  	?>
 <tr><td><?php echo $cnt;;?></td>
 <td><?php echo $row->firstName;?><?php echo $row->middleName;?><?php echo $row->lastName;?></td>
-<td><?php echo $row->regno;?></td>
+<td><?php echo $row->schoolid;?></td>
 <td><?php echo $row->contactno;?></td>
 <td><?php echo $row->roomno;?></td>
 <td><?php echo $row->seater;?></td>
 <td><?php echo $row->stayfrom;?></td>
 <td>
-<a href="student-details.php?regno=<?php echo $row->regno;?>" title="View Full Details"><i class="fa fa-desktop"></i></a>&nbsp;&nbsp;
-<a href="manage-students.php?del=<?php echo $row->regno;?>" title="Delete Record" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+<a href="student-details.php?schoolid=<?php echo $row->schoolid;?>" title="View Full Details"><i class="fa fa-desktop"></i></a>&nbsp;&nbsp;
+<a href="manage-students.php?del=<?php echo $row->schoolid;?>" title="Delete Record" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
 										</tr>
 									<?php
 $cnt=$cnt+1;

@@ -3,7 +3,7 @@ session_start();
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
-$regno=$_POST['regno'];
+$schoolid=$_POST['schoolid'];
 $fname=$_POST['fname'];
 $mname=$_POST['mname'];
 $lname=$_POST['lname'];
@@ -11,9 +11,9 @@ $gender=$_POST['gender'];
 $contactno=$_POST['contact'];
 $emailid=$_POST['email'];
 $password=$_POST['password'];
-	$result ="SELECT count(*) FROM userRegistration WHERE email=? || regNo=?";
+	$result ="SELECT count(*) FROM userRegistration WHERE email=? || schoolId=?";
 		$stmt = $mysqli->prepare($result);
-		$stmt->bind_param('ss',$email,$regno);
+		$stmt->bind_param('ss',$email,$schoolid);
 		$stmt->execute();
 $stmt->bind_result($count);
 $stmt->fetch();
@@ -23,9 +23,9 @@ if($count>0)
 echo"<script>alert('Registration number or email id already registered.');</script>";
 }else{
 
-$query="insert into  userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
+$query="insert into  userRegistration(schoolId,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('sssssiss',$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
+$rc=$stmt->bind_param('sssssiss',$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
 $stmt->execute();
 echo"<script>alert('Student Succssfully register');</script>";
 }
@@ -90,7 +90,7 @@ return true;
 <div class="form-group">
 <label class="col-sm-2 control-label"> Registration No : </label>
 <div class="col-sm-8">
-<input type="text" name="regno" id="regno"  class="form-control" required="required" onBlur="checkRegnoAvailability()">
+<input type="text" name="schoolid" id="schoolid"  class="form-control" required="required" onBlur="checkSchoolidAvailability()">
 <span id="user-reg-availability" style="font-size:12px;"></span>
 </div>
 </div>
@@ -212,12 +212,12 @@ alert('error');
 }
 </script>
 	<script>
-function checkRegnoAvailability() {
+function checkSchoolidAvailability() {
 
 $("#loaderIcon").show();
 jQuery.ajax({
 url: "check_availability.php",
-data:'regno='+$("#regno").val(),
+data:'schoolid='+$("#schoolid").val(),
 type: "POST",
 success:function(data){
 $("#user-reg-availability").html(data);

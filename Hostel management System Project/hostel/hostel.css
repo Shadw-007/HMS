@@ -171,4 +171,4 @@ padding-top:0px;
 .backgroundmid{ background-image:url(images/bar_05.gif); width:212px; background-repeat:repeat-y;}
 .font{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#333333; text-decoration:none;}
 .pad{ padding:3px;}
-.header{ font-family:Verdana, Geneva, sans-serif; font-size:16px; color:#454545; font-weight:bold; padding:2px; }
+.header{ font-family:Verdana, Geneva, sans-serif; font-size:16px; color:#454545; font-weight:bold; padding:2px; margin-bottom: 10px;}

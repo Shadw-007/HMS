@@ -61,7 +61,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									<tbody>
 <?php	
 $aid=$_SESSION['login'];
-	$ret="select * from registration where (emailid=? || regno	=?)";
+	$ret="select * from registration where (emailid=? || schoolid	=?)";
 $stmt= $mysqli->prepare($ret) ;
 $stmt->bind_param('ss',$aid,$aid);
 $stmt->execute() ;
@@ -76,7 +76,7 @@ while($row=$res->fetch_object())
 </tr>
 <tr>
 	<th>Registration Number :</th>
-<td><?php echo $row->regno;?></td>
+<td><?php echo $row->schoolid;?></td>
 <th>Apply Date :</th>
 <td colspan="3"><?php echo $row->postingDate;?></td>
 </tr>
@@ -132,7 +132,7 @@ echo "<span style='padding-left:2%; color:red;'>(You booked hostel without food)
 
 <tr>
 <td><b>Reg No. :</b></td>
-<td><?php echo $row->regno;?></td>
+<td><?php echo $row->schoolid;?></td>
 <td><b>Full Name :</b></td>
 <td><?php echo $row->firstName;?><?php echo $row->middleName;?><?php echo $row->lastName;?></td>
 <td><b>Email :</b></td>

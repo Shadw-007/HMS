@@ -22,12 +22,12 @@ echo "<span style='color:red'> Email already exist. Please try again.</span>";
 }
 }
 // For Registration Number
-if(!empty($_POST["regno"])) {
-	$regno= $_POST["regno"];
+if(!empty($_POST["schoolid"])) {
+	$schoolid= $_POST["schoolid"];
 
-		$result ="SELECT count(*) FROM userRegistration WHERE regNo=?";
+		$result ="SELECT count(*) FROM userRegistration WHERE schoolId=?";
 		$stmt = $mysqli->prepare($result);
-		$stmt->bind_param('s',$regno);
+		$stmt->bind_param('s',$schoolid);
 		$stmt->execute();
 $stmt->bind_result($count);
 $stmt->fetch();

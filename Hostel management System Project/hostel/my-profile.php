@@ -82,9 +82,9 @@ Last Updation date : &nbsp; <?php echo $row->updationDate;?>
 								
 
 <div class="form-group">
-<label class="col-sm-2 control-label"> Registration No : </label>
+<label class="col-sm-2 control-label"> Student ID : </label>
 <div class="col-sm-8">
-<input type="text" name="regno" id="regno"  class="form-control" required="required" value="<?php echo $row->regNo;?>" readonly="true">
+<input type="text" name="schoolid" id="schoolid"  class="form-control" required="required" value="<?php echo $row->schoolId;?>" readonly="true">
 </div>
 </div>
 
@@ -132,7 +132,7 @@ Last Updation date : &nbsp; <?php echo $row->updationDate;?>
 
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Email id: </label>
+<label class="col-sm-2 control-label">Email ID: </label>
 <div class="col-sm-8">
 <input type="email" name="email" id="email"  class="form-control" value="<?php echo $row->email;?>" readonly>
 <span id="user-availability-status" style="font-size:12px;"></span>

@@ -13,7 +13,7 @@ $foodstatus=$_POST['foodstatus'];
 $stayfrom=$_POST['stayf'];
 $duration=$_POST['duration'];
 $course=$_POST['course'];
-$regno=$_POST['regno'];
+$schoolid=$_POST['schoolid'];
 $fname=$_POST['fname'];
 $mname=$_POST['mname'];
 $lname=$_POST['lname'];
@@ -32,9 +32,9 @@ $paddress=$_POST['paddress'];
 $pcity=$_POST['pcity'];
 $pprovince=$_POST['pprovince'];
 $ppincode=$_POST['ppincode'];
-$query="insert into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresProvince,corresPincode,pmntAddress,pmntCity,pmnatetProvince,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+$query="insert into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,schoolid,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresProvince,corresPincode,pmntAddress,pmntCity,pmnatetProvince,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('iiiisisissssisississsisssi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cprovince,$cpincode,$paddress,$pcity,$pprovince,$ppincode);
+$rc=$stmt->bind_param('iiiisisissssisississsisssi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cprovince,$cpincode,$paddress,$pcity,$pprovince,$ppincode);
 $stmt->execute();
 echo"<script>alert('Student Succssfully register');</script>";
 }
@@ -106,7 +106,7 @@ $('#fpm').val(data);
 										<form method="post" action="" class="form-horizontal">
 							<?php
 $uid=$_SESSION['login'];
-							 $stmt=$mysqli->prepare("SELECT emailid FROM registration WHERE emailid=? || regno=? ");
+							 $stmt=$mysqli->prepare("SELECT emailid FROM registration WHERE emailid=? || schoolid=? ");
 				$stmt->bind_param('ss',$uid,$uid);
 				$stmt->execute();
 				$stmt -> bind_result($email);
@@ -244,9 +244,9 @@ $aid=$_SESSION['id'];
 	  	?>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Registration No : </label>
+<label class="col-sm-2 control-label">Student ID : </label>
 <div class="col-sm-8">
-<input type="text" name="regno" id="regno"  class="form-control" value="<?php echo $row->regNo;?>" readonly >
+<input type="text" name="schoolid" id="schoolid"  class="form-control" value="<?php echo $row->schoolId;?>" readonly >
 </div>
 </div>
 
@@ -288,7 +288,7 @@ $aid=$_SESSION['id'];
 
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Email id : </label>
+<label class="col-sm-2 control-label">Email ID : </label>
 <div class="col-sm-8">
 <input type="email" name="email" id="email"  class="form-control" value="<?php echo $row->email;?>"  readonly>
 </div>

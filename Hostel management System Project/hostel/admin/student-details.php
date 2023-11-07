@@ -60,8 +60,8 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 						 <span style="float:left" ><i class="fa fa-print fa-2x" aria-hidden="true" OnClick="CallPrint(this.value)" style="cursor:pointer" title="Print the Report"></i></span>			
 									<tbody>
 <?php	
-$aid=intval($_GET['regno']);
-	$ret="select * from registration where (regno	=?)";
+$aid=intval($_GET['schoolid']);
+	$ret="select * from registration where (schoolid	=?)";
 $stmt= $mysqli->prepare($ret) ;
 $stmt->bind_param('s',$aid);
 $stmt->execute() ;
@@ -76,7 +76,7 @@ while($row=$res->fetch_object())
 </tr>
 <tr>
 	<th>Registration Number :</th>
-<td><?php echo $row->regno;?></td>
+<td><?php echo $row->schoolid;?></td>
 <th>Apply Date :</th>
 <td colspan="3"><?php echo $row->postingDate;?></td>
 </tr>
@@ -132,7 +132,7 @@ echo "<span style='padding-left:2%; color:red;'>(You booked hostel without food)
 
 <tr>
 <td><b>Reg No. :</b></td>
-<td><?php echo $row->regno;?></td>
+<td><?php echo $row->schoolid;?></td>
 <td><b>Full Name :</b></td>
 <td><?php echo $row->firstName;?><?php echo $row->middleName;?><?php echo $row->lastName;?></td>
 <td><b>Email :</b></td>
