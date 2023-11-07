@@ -14,7 +14,7 @@ $query="update courses set course_code=?,course_sn=?,course_fn=? where id=?";
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('sssi',$coursecode,$coursesn,$coursefn,$id);
 $stmt->execute();
-echo"<script>alert('Course has been Updated successfully');</script>";
+echo"<script>alert('Course has been updated successfully');</script>";
 }
 
 ?>

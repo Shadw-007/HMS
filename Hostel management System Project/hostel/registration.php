@@ -20,14 +20,14 @@ $stmt->fetch();
 $stmt->close();
 if($count>0)
 {
-echo"<script>alert('Registration number or email id already registered.');</script>";
+echo"<script>alert('Student ID or Email ID already registered.');</script>";
 }else{
 
 $query="insert into  userRegistration(schoolId,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('sssssiss',$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
 $stmt->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+echo"<script>alert('Student succssfully registered');</script>";
 }
 }
 ?>
@@ -88,7 +88,7 @@ return true;
 										
 
 <div class="form-group">
-<label class="col-sm-2 control-label"> Registration No : </label>
+<label class="col-sm-2 control-label"> Student ID : </label>
 <div class="col-sm-8">
 <input type="text" name="schoolid" id="schoolid"  class="form-control" required="required" onBlur="checkSchoolidAvailability()">
 <span id="user-reg-availability" style="font-size:12px;"></span>
@@ -138,7 +138,7 @@ return true;
 
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Email id: </label>
+<label class="col-sm-2 control-label">Email ID: </label>
 <div class="col-sm-8">
 <input type="email" name="email" id="email"  class="form-control" onBlur="checkAvailability()" required="required">
 <span id="user-availability-status" style="font-size:12px;"></span>

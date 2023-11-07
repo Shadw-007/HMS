@@ -13,9 +13,9 @@ $stmt->bind_result($count);
 $stmt->fetch();
 $stmt->close();
 if($count>0)
-echo "<span style='color:red'>$count. Seats already full.</span>";
+echo "<span style='color:red'>$count. bedspaces already full.</span>";
 else
-	echo "<span style='color:red'>All Seats are Available</span>";
+	echo "<span style='color:red'>All bedspaces are available</span>";
 }
 
 if(!empty($_POST["oldpassword"])) 
@@ -30,7 +30,7 @@ $stmt -> fetch();
 $opass=$result;
 if($opass==$pass) 
 echo "<span style='color:green'> Password  matched .</span>";
-else echo "<span style='color:red'> Password Not matched</span>";
+else echo "<span style='color:red'> Password did not match</span>";
 }
 
 //For Email
@@ -50,11 +50,11 @@ $stmt->fetch();
 $stmt->close();
 if($count>0)
 {
-echo "<span style='color:red'> Email already exist. Please try again.</span>";
+echo "<span style='color:red'> Email already exists. Please try again.</span>";
 }
 }
 }
-// For Registration Number
+// For Student ID
 if(!empty($_POST["schoolid"])) {
 	$schoolid= $_POST["schoolid"];
 
@@ -67,7 +67,7 @@ $stmt->fetch();
 $stmt->close();
 if($count>0)
 {
-echo "<span style='color:red'> Registration number already exist. Please try again .</span>";
+echo "<span style='color:red'> Student ID already exist. Please try again .</span>";
 }
 
 }

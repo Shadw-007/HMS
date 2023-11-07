@@ -13,7 +13,7 @@ $query="update rooms set seater=?,fees=? where id=?";
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('iii',$seater,$fees,$id);
 $stmt->execute();
-echo"<script>alert('Room Details has been Updated successfully');</script>";
+echo"<script>alert('Room details have been updated successfully');</script>";
 }
 
 ?>

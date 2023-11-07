@@ -41,7 +41,7 @@ $stmt->fetch();
 $stmt->close();
 if($count>0)
 {
-echo"<script>alert('Registration number or email id already registered.');</script>";
+echo"<script>alert('Student ID or Email ID already registered.');</script>";
 }else{
 
 
@@ -56,7 +56,7 @@ $query1="insert into  userregistration(schoolId,firstName,middleName,lastName,ge
 $stmt1= $mysqli->prepare($query1);
 $stmt1->bind_param('sssssiss',$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$contactno);
 $stmt1->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+echo"<script>alert('Student succssfully registered');</script>";
 }
 }
 ?>

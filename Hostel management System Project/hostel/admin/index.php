@@ -65,9 +65,12 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM admin WHERE (user
 									<input type="text" placeholder="Username" name="username" class="form-control mb">
 									<label for="" class="text-uppercase text-sm text-light">Password</label>
 									<input type="password" placeholder="Password" name="password" class="form-control mb">
-									<input type="submit" name="login" class="btn btn-primary btn-block" value="login" >
+									<input type="submit" name="login" class="btn btn-primary btn-block" value="Login" >
 								</form>
 							</div>
+						</div>
+						<div class="text-center text-light">
+							<a href="/index.php" class="text-light">Main Menu</a>
 						</div>
 					</div>
 				</div>

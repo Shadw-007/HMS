@@ -17,7 +17,7 @@ $stmt1->store_result();
 $row_cnt=$stmt1->num_rows;;
 if($row_cnt>0)
 {
-echo"<script>alert('Room alreadt exist');</script>";
+echo"<script>alert('Room already exists');</script>";
 }
 else
 {

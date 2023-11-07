@@ -17,7 +17,7 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 
 				else
 				{
-					echo "<script>alert('Invalid Email/Contact no or password');</script>";
+					echo "<script>alert('Invalid Email/Contact or no Password');</script>";
 				}
 			}
 				?>
@@ -44,22 +44,22 @@ $stmt=$mysqli->prepare("SELECT email,contactNo,password FROM userregistration WH
 </head
 <body>
 	
-	<div class="login-page bk-img" style="background-image: url(img/login-bg.jpg);">
+	<div class="login-page bk-img" style="background-image: url(img/NU-loginbg.jpg);">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">Forgot Password</h1>
-						<div class="well row pt-2x pb-3x bk-light">
+					<div class="col-md-6 col-md-offset-3" style="margin-top:11%;">
+						<h1 class="text-center text-bold text-dark mt-4x">Forgot Password</h1>
+						<div class="well row pt-2x pb-3x bk-dark">
 							<div class="col-md-8 col-md-offset-2">
 							<?php if(isset($_POST['login']))
 { ?>
 					<p>Yuor Password is <?php echo $pwd;?><br> Change the Password After login</p>
 					<?php }  ?>
 								<form action="" class="mt" method="post">
-									<label for="" class="text-uppercase text-sm">Your Email</label>
+									<label for="" class="text-uppercase text-sm text-light">Your Email</label>
 									<input type="email" placeholder="Email" name="email" class="form-control mb">
-									<label for="" class="text-uppercase text-sm">Your Contact no</label>
+									<label for="" class="text-uppercase text-sm text-light">Your Contact no</label>
 									<input type="text" placeholder="Contact no" name="contact" class="form-control mb">
 									
 

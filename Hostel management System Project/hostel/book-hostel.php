@@ -36,7 +36,7 @@ $query="insert into  registration(roomno,seater,feespm,foodstatus,stayfrom,durat
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('iiiisisissssisississsisssi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cprovince,$cpincode,$paddress,$pcity,$pprovince,$ppincode);
 $stmt->execute();
-echo"<script>alert('Student Succssfully register');</script>";
+echo"<script>alert('Student successfully registered');</script>";
 }
 ?>
 
@@ -215,7 +215,7 @@ while($row=$res->fetch_object())
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">course </label>
+<label class="col-sm-2 control-label">Course </label>
 <div class="col-sm-8">
 <select name="course" id="course" class="form-control" required> 
 <option value="">Select Course</option>

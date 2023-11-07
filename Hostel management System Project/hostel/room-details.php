@@ -75,7 +75,7 @@ while($row=$res->fetch_object())
 <td colspan="6" style="text-align:center; color:blue"><h3>Room Realted Info</h3></td>
 </tr>
 <tr>
-	<th>Registration Number :</th>
+	<th>Student ID:</th>
 <td><?php echo $row->schoolid;?></td>
 <th>Apply Date :</th>
 <td colspan="3"><?php echo $row->postingDate;?></td>
@@ -119,7 +119,7 @@ if($row->foodstatus==1)
 echo $ff=(2000*$dr);
 } else { 
 echo $ff=0;
-echo "<span style='padding-left:2%; color:red;'>(You booked hostel without food).<span>";
+echo "<span style='padding-left:2%; color:red;'>(You booked the hostel without food).<span>";
 }?></td>
 </tr>
 <tr>
@@ -131,7 +131,7 @@ echo "<span style='padding-left:2%; color:red;'>(You booked hostel without food)
 </tr>
 
 <tr>
-<td><b>Reg No. :</b></td>
+<td><b>Stu ID :</b></td>
 <td><?php echo $row->schoolid;?></td>
 <td><b>Full Name :</b></td>
 <td><?php echo $row->firstName;?><?php echo $row->middleName;?><?php echo $row->lastName;?></td>

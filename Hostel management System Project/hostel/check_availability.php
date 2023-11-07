@@ -34,7 +34,7 @@ $stmt->fetch();
 $stmt->close();
 if($count>0)
 {
-echo "<span style='color:red'> Registration number already exist. Please try again .</span>";
+echo "<span style='color:red'> Student ID already exist. Please try again .</span>";
 }
 
 }
@@ -52,8 +52,8 @@ $stmt -> bind_result($result);
 $stmt -> fetch();
 $opass=$result;
 if($opass==$pass) 
-echo "<span style='color:green'> Password  matched .</span>";
-else echo "<span style='color:red'> Password Not matched</span>";
+echo "<span style='color:green'> Password matched .</span>";
+else echo "<span style='color:red'> Password did not match</span>";
 }
 
 // For room availbilty
@@ -68,8 +68,8 @@ $stmt->bind_result($count);
 $stmt->fetch();
 $stmt->close();
 if($count>0)
-echo "<span style='color:red'>$count Seats already full.</span>";
+echo "<span style='color:red'>$count Bedspaces already full.</span>";
 else
-	echo "<span style='color:red'>All Seats are Available</span>";
+	echo "<span style='color:red'>All bedspaces are available</span>";
 }
 ?>

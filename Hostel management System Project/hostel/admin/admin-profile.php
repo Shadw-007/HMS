@@ -13,7 +13,7 @@ $query="update admin set email=?,updation_date=? where id=?";
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('ssi',$email,$udate,$aid);
 $stmt->execute();
-echo"<script>alert('Email id has been successfully updated');</script>";
+echo"<script>alert('Email ID has been successfully updated');</script>";
 }
 // code for change password
 if(isset($_POST['changepwd']))
