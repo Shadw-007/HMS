@@ -93,7 +93,7 @@ INSERT INTO `courses` (`id`, `course_code`, `course_sn`, `course_fn`, `posting_d
 CREATE TABLE `registration` (
   `id` int(11) NOT NULL,
   `roomno` int(11) DEFAULT NULL,
-  `seater` int(11) DEFAULT NULL,
+  `bedspace` int(11) DEFAULT NULL,
   `feespm` int(11) DEFAULT NULL,
   `foodstatus` int(11) DEFAULT NULL,
   `stayfrom` date DEFAULT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `registration` (
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`id`, `roomno`, `seater`, `feespm`, `foodstatus`, `stayfrom`, `duration`, `course`, `schoolId`, `firstName`, `middleName`, `lastName`, `gender`, `contactno`, `emailid`, `egycontactno`, `guardianName`, `guardianRelation`, `guardianContactno`, `corresAddress`, `corresCIty`, `corresProvince`, `corresPincode`, `pmntAddress`, `pmntCity`, `pmnatetProvince`, `pmntPincode`, `postingDate`, `updationDate`) VALUES
+INSERT INTO `registration` (`id`, `roomno`, `bedspace`, `feespm`, `foodstatus`, `stayfrom`, `duration`, `course`, `schoolId`, `firstName`, `middleName`, `lastName`, `gender`, `contactno`, `emailid`, `egycontactno`, `guardianName`, `guardianRelation`, `guardianContactno`, `corresAddress`, `corresCIty`, `corresProvince`, `corresPincode`, `pmntAddress`, `pmntCity`, `pmnatetProvince`, `pmntPincode`, `postingDate`, `updationDate`) VALUES
 (2, 100, 5, 8000, 1, '2020-08-01', 6, 'Bachelor  of Technology', 10806121, 'Anuj', '', 'kumar', 'male', 1234567890, 'ak@gmail.com', 1236547890, 'ABC', 'XYZ', 98756320000, 'ABC 12345 XYZ Street', 'New Delhi', 'Delhi (NCT)', 110001, 'ABC 12345 XYZ Street', 'New Delhi', 'Delhi (NCT)', 110001, '2020-07-20 14:58:26', NULL);
 
 -- --------------------------------------------------------
@@ -137,7 +137,7 @@ INSERT INTO `registration` (`id`, `roomno`, `seater`, `feespm`, `foodstatus`, `s
 
 CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
-  `seater` int(11) DEFAULT NULL,
+  `bedspace` int(11) DEFAULT NULL,
   `room_no` int(11) DEFAULT NULL,
   `fees` int(11) DEFAULT NULL,
   `posting_date` timestamp NULL DEFAULT current_timestamp()
@@ -147,7 +147,7 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `seater`, `room_no`, `fees`, `posting_date`) VALUES
+INSERT INTO `rooms` (`id`, `bedspace`, `room_no`, `fees`, `posting_date`) VALUES
 (1, 5, 1, 8000, '2020-04-11 22:45:43'),
 (2, 2, 2, 6000, '2020-04-12 01:30:47'),
 (3, 2, 3, 6000, '2020-04-12 01:30:58'),

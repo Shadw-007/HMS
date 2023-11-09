@@ -6,12 +6,12 @@ check_login();
 //code for add courses
 if(isset($_POST['submit']))
 {
-$seater=$_POST['seater'];
+$bedspace=$_POST['bedspace'];
 $fees=$_POST['fees'];
 $id=$_GET['id'];
-$query="update rooms set seater=?,fees=? where id=?";
+$query="update rooms set bedspace=?,fees=? where id=?";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('iii',$seater,$fees,$id);
+$rc=$stmt->bind_param('iii',$bedspace,$fees,$id);
 $stmt->execute();
 echo"<script>alert('Room details have been updated successfully');</script>";
 }
@@ -69,9 +69,9 @@ echo"<script>alert('Room details have been updated successfully');</script>";
 	  	?>
 						<div class="hr-dashed"></div>
 						<div class="form-group">
-						<label class="col-sm-2 control-label">Seater  </label>
+						<label class="col-sm-2 control-label">Bedspace  </label>
 					<div class="col-sm-8">
-					<input type="text"  name="seater" value="<?php echo $row->seater;?>"  class="form-control"> </div>
+					<input type="text"  name="bedspace" value="<?php echo $row->bedspace;?>"  class="form-control"> </div>
 					</div>
 				 <div class="form-group">
 				<label class="col-sm-2 control-label">Room no </label>

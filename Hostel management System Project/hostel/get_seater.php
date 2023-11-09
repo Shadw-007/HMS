@@ -12,7 +12,7 @@ $stmt->bind_param('s',$id);
 $stmt->execute();
 $res=$stmt->get_result();
 while($row=$res->fetch_object())
-{  echo htmlentities($row->seater);
+{  echo htmlentities($row->bedspace);
  
  }
 }

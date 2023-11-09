@@ -70,7 +70,7 @@ $stmt=$mysqli->prepare("SELECT username,email,password,id FROM admin WHERE (user
 							</div>
 						</div>
 						<div class="text-center text-light">
-							<!-- <a href="\hostel\index.php" class="text-light">Main Menu</a> -->
+							<!-- <a href="\hostel\index.php" class="text-light">Main Menu</a>  -->
 						</div>
 					</div>
 				</div>

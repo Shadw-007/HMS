@@ -54,7 +54,7 @@ if(isset($_GET['del']))
 										<tr>
 											<th>Sno.</th>
 										
-											<th>Seater</th>
+											<th>Bedspace</th>
 											<th>Room No.</th>
 											<th>Fees (PM) </th>
 
@@ -65,7 +65,7 @@ if(isset($_GET['del']))
 									<tfoot>
 										<tr>
 											<th>Sno.</th>
-											<th>Seater</th>
+											<th>Bedspace</th>
 											<th>Room No.</th>
 										
 											<th>Fees (PM) </th>
@@ -86,7 +86,7 @@ while($row=$res->fetch_object())
 	  {
 	  	?>
 <tr><td><?php echo $cnt;;?></td>
-<td><?php echo $row->seater;?></td>
+<td><?php echo $row->bedspace;?></td>
 <td><?php echo $row->room_no;?></td>
 <td><?php echo $row->fees;?></td>
 <td><?php echo $row->posting_date;?></td>

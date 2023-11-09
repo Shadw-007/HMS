@@ -7,7 +7,7 @@ check_login();
 if(isset($_POST['submit']))
 {
 $roomno=$_POST['room'];
-$seater=$_POST['seater'];
+$bedspace=$_POST['bedspace'];
 $feespm=$_POST['fpm'];
 $foodstatus=$_POST['foodstatus'];
 $stayfrom=$_POST['stayf'];
@@ -45,9 +45,9 @@ echo"<script>alert('Student ID or Email ID already registered.');</script>";
 }else{
 
 
-$query="insert into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,schoolid,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresState,corresPincode,pmntAddress,pmntCity,pmnatetState,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+$query="insert into  registration(roomno,bedspace,feespm,foodstatus,stayfrom,duration,course,schoolid,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresState,corresPincode,pmntAddress,pmntCity,pmnatetState,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('iiiisisissssisississsisssi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cstate,$cpincode,$paddress,$pcity,$pstate,$ppincode);
+$rc=$stmt->bind_param('iiiisisissssisississsisssi',$roomno,$bedspace,$feespm,$foodstatus,$stayfrom,$duration,$course,$schoolid,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cstate,$cpincode,$paddress,$pcity,$pstate,$ppincode);
 $stmt->execute();
 $stmt->close();
 
@@ -83,20 +83,20 @@ echo"<script>alert('Student succssfully registered');</script>";
 <script type="text/javascript" src="js/validation.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script>
-function getSeater(val) {
+function getBedspace(val) {
 $.ajax({
 type: "POST",
-url: "get_seater.php",
+url: "get_bedspace.php",
 data:'roomid='+val,
 success: function(data){
 //alert(data);
-$('#seater').val(data);
+$('#bedspace').val(data);
 }
 });
 
 $.ajax({
 type: "POST",
-url: "get_seater.php",
+url: "get_bedspace.php",
 data:'rid='+val,
 success: function(data){
 //alert(data);
@@ -134,7 +134,7 @@ $('#fpm').val(data);
 <div class="form-group">
 <label class="col-sm-2 control-label">Room no. </label>
 <div class="col-sm-8">
-<select name="room" id="room"class="form-control"  onChange="getSeater(this.value);" onBlur="checkAvailability()" required> 
+<select name="room" id="room"class="form-control"  onChange="getBedspace(this.value);" onBlur="checkAvailability()" required> 
 <option value="">Select Room</option>
 <?php $query ="SELECT * FROM rooms";
 $stmt2 = $mysqli->prepare($query);
@@ -152,9 +152,9 @@ while($row=$res->fetch_object())
 </div>
 											
 <div class="form-group">
-<label class="col-sm-2 control-label">Seater</label>
+<label class="col-sm-2 control-label">Bedspace</label>
 <div class="col-sm-8">
-<input type="text" name="seater" id="seater"  class="form-control" readonly="true"  >
+<input type="text" name="bedspace" id="bedspace"  class="form-control" readonly="true"  >
 </div>
 </div>
 

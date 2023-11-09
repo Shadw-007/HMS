@@ -70,7 +70,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											<th>Reg no</th>
 											<th>Contact no </th>
 											<th>room no  </th>
-											<th>Seater </th>
+											<th>Bedspace </th>
 											<th>Staying From </th>
 											<th>Action</th>
 										</tr>
@@ -82,7 +82,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											<th>Reg no</th>
 											<th>Contact no </th>
 											<th>Room no  </th>
-											<th>Seater </th>
+											<th>Bedspace </th>
 											<th>Staying From </th>
 											<th>Action</th>
 										</tr>
@@ -104,7 +104,7 @@ while($row=$res->fetch_object())
 <td><?php echo $row->schoolid;?></td>
 <td><?php echo $row->contactno;?></td>
 <td><?php echo $row->roomno;?></td>
-<td><?php echo $row->seater;?></td>
+<td><?php echo $row->bedspace;?></td>
 <td><?php echo $row->stayfrom;?></td>
 <td>
 <a href="student-details.php?schoolid=<?php echo $row->schoolid;?>" title="View Full Details"><i class="fa fa-desktop"></i></a>&nbsp;&nbsp;

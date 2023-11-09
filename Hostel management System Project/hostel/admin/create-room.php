@@ -6,7 +6,7 @@ check_login();
 //code for add courses
 if(isset($_POST['submit']))
 {
-$seater=$_POST['seater'];
+$bedspace=$_POST['bedspace'];
 $roomno=$_POST['rmno'];
 $fees=$_POST['fee'];
 $sql="SELECT room_no FROM rooms where room_no=?";
@@ -21,9 +21,9 @@ echo"<script>alert('Room already exists');</script>";
 }
 else
 {
-$query="insert into  rooms (seater,room_no,fees) values(?,?,?)";
+$query="insert into  rooms (bedspace,room_no,fees) values(?,?,?)";
 $stmt = $mysqli->prepare($query);
-$rc=$stmt->bind_param('iii',$seater,$roomno,$fees);
+$rc=$stmt->bind_param('iii',$bedspace,$roomno,$fees);
 $stmt->execute();
 echo"<script>alert('Room has been added successfully');</script>";
 }
@@ -75,15 +75,15 @@ echo"<script>alert('Room has been added successfully');</script>";
 											
 											<div class="hr-dashed"></div>
 											<div class="form-group">
-												<label class="col-sm-2 control-label">Select Seater  </label>
+												<label class="col-sm-2 control-label">Select Bedspace  </label>
 												<div class="col-sm-8">
-												<Select name="seater" class="form-control" required>
-<option value="">Select Seater</option>
-<option value="1">Single Seater</option>
-<option value="2">Two Seater</option>
-<option value="3">Three Seater</option>
-<option value="4">Four Seater</option>
-<option value="5">Five Seater</option>
+												<Select name="bedspace" class="form-control" required>
+<option value="">Select Bedspace</option>
+<option value="1">Single Bedspace</option>
+<option value="2">Two Bedspaces</option>
+<option value="3">Three Bedspaces</option>
+<option value="4">Four Bedspaces</option>
+<option value="5">Five Bedspaces</option>
 </Select>
 </div>
 </div>

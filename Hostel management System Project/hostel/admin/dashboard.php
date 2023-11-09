@@ -104,6 +104,32 @@ $stmt2->close();
 											<a href="manage-courses.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
+
+									<div class="col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body bk-primary text-light">
+												<div class="stat-panel text-center">
+
+<?php
+													$result = "SELECT count(*) FROM registration ";
+													$stmt = $mysqli->prepare($result);
+													$stmt->execute();
+													$stmt->bind_result($count);
+													$stmt->fetch();
+													$stmt->close();
+													?>
+									
+													<div class="stat-panel-number h1 ">
+														<?php echo $count; ?>
+													</div>
+													<div class="stat-panel-title text-uppercase"> Total Payments</div>
+												</div>
+											</div>
+											<a href="manage-students.php" class="block-anchor panel-footer">Full Detail <i
+													class="fa fa-arrow-right"></i></a>
+										</div>
+									</div>
+									
 									
 								</div>
 							</div>
@@ -134,7 +160,7 @@ $stmt2->close();
 	<script>
 		
 	window.onload = function(){
-    
+	
 		// Line chart from swirlData for dashReport
 		var ctx = document.getElementById("dashReport").getContext("2d");
 		window.myLine = new Chart(ctx).Line(swirlData, {

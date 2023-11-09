@@ -86,8 +86,8 @@ while($row=$res->fetch_object())
 <tr>
 <td><b>Room no :</b></td>
 <td><?php echo $row->roomno;?></td>
-<td><b>Seater :</b></td>
-<td><?php echo $row->seater;?></td>
+<td><b>Bedspace :</b></td>
+<td><?php echo $row->bedspace;?></td>
 <td><b>Fees PM :</b></td>
 <td><?php echo $fpm=$row->feespm;?></td>
 </tr>
