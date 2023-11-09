@@ -104,14 +104,14 @@ $stmt2->close();
 											<a href="manage-courses.php" class="block-anchor panel-footer text-center">See All &nbsp; <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
-
-									<div class="col-md-4">
+									<div class="col-md-7" style="margin-left: 20%;">
+									
 										<div class="panel panel-default">
-											<div class="panel-body bk-primary text-light">
+											<div class="panel-body bk-primary text-light" style="background: red;">
 												<div class="stat-panel text-center">
 
 <?php
-													$result = "SELECT count(*) FROM registration ";
+													$result = "SELECT count(firstName) FROM registration ";
 													$stmt = $mysqli->prepare($result);
 													$stmt->execute();
 													$stmt->bind_result($count);
@@ -125,8 +125,7 @@ $stmt2->close();
 													<div class="stat-panel-title text-uppercase"> Total Payments</div>
 												</div>
 											</div>
-											<a href="manage-students.php" class="block-anchor panel-footer">Full Detail <i
-													class="fa fa-arrow-right"></i></a>
+											<a href="students-paid.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									
